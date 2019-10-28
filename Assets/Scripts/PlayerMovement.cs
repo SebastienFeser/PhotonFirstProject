@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerMovement : MonoBehaviourPunCallbacks
+/*public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     [SerializeField] float force;
     [SerializeField] float stopForce;
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
             //Comment préciser qu'on parle du joueur qui envoie
 
             return;
-        }*/
+        }
         if (photonView.IsMine)
         {
 
@@ -97,4 +97,4 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         //PhotonNetwork.Destroy(gameObject);
     }
-}
+}*/

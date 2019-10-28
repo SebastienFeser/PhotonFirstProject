@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Launcher.unity
-    guid: 2a7ba0f3fb4beaf4f888d49676bc85e5
+    path: Assets/Scenes/FinalScenes/FinalLobby.unity
+    guid: cb1ce1bc6cafd5f44a4cf66fc127dcb5
   - enabled: 1
-    path: Assets/Scenes/GameRoom.unity
-    guid: d9fcd6548e5827b4fabc18a90030771b
+    path: Assets/Scenes/FinalScenes/WaitingRoom.unity
+    guid: 228a9b6e2e231db4a8ca43a15b8a4e1d
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/GameScene.unity
+    guid: 117e66f1ba4ba2a4bbd63782fbba6639
   m_configObjects: {}

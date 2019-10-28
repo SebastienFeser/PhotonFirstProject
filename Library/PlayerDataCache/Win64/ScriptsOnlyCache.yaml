@@ -1,11 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Launcher
-    - PlayerDispaching
+    - LobbyFinal
     - PlayerMovement
-    - PlayerName
-    - WaitingForPlayers
+    - TileController
+    - WaitingRoomManager
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -44,62 +43,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/GameRoom.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9410}
-    - Class: 114
-      Script: {instanceID: 9416}
-    - Class: 114
-      Script: {instanceID: 9422}
-    - Class: 114
-      Script: {instanceID: 9466}
-    - Class: 114
-      Script: {instanceID: 9626}
-    - Class: 114
-      Script: {instanceID: 10360}
-    - Class: 114
-      Script: {instanceID: 10552}
-    - Class: 114
-      Script: {instanceID: 10614}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Launcher.unity:
+    Assets/Scenes/FinalScenes/FinalLobby.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -173,43 +117,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9932}
     - Class: 114
-      Script: {instanceID: 9948}
+      Script: {instanceID: 10076}
     - Class: 114
-      Script: {instanceID: 10074}
+      Script: {instanceID: 10140}
     - Class: 114
-      Script: {instanceID: 10138}
+      Script: {instanceID: 10230}
     - Class: 114
-      Script: {instanceID: 10226}
+      Script: {instanceID: 10270}
     - Class: 114
-      Script: {instanceID: 10266}
-    - Class: 114
-      Script: {instanceID: 10318}
+      Script: {instanceID: 10322}
     - Class: 114
       Script: {instanceID: 10324}
     - Class: 114
-      Script: {instanceID: 10360}
+      Script: {instanceID: 10330}
     - Class: 114
-      Script: {instanceID: 10372}
+      Script: {instanceID: 10366}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10502}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10520}
+      Script: {instanceID: 10522}
     - Class: 114
-      Script: {instanceID: 10552}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10728}
+      Script: {instanceID: 10558}
     - Class: 114
-      Script: {instanceID: 10826}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 10944}
+      Script: {instanceID: 10832}
     - Class: 114
-      Script: {instanceID: 10962}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11018}
+      Script: {instanceID: 11024}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,6 +179,90 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/FinalScenes/GameScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 14118}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    Assets/Scenes/FinalScenes/WaitingRoom.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9408}
+    - Class: 114
+      Script: {instanceID: 9410}
+    - Class: 114
+      Script: {instanceID: 9416}
+    - Class: 114
+      Script: {instanceID: 9422}
+    - Class: 114
+      Script: {instanceID: 9430}
+    - Class: 114
+      Script: {instanceID: 9466}
+    - Class: 114
+      Script: {instanceID: 10366}
+    - Class: 114
+      Script: {instanceID: 10558}
+    - Class: 114
+      Script: {instanceID: 13798}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1039,6 +1065,12 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsOpenToggle
   - hash:
       serializedVersion: 2
+      Hash: f315d17c5f52def3710616f7e8b7ee9b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1201,6 +1233,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 02a4e11bf2bac55fa0db910bbdeeaadc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LobbyManager
+  - hash:
+      serializedVersion: 2
       Hash: d9aa52c5a283a9b8a790e55c0dee9ccf
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1271,6 +1309,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
     className: LoadLevelUIForm
+  - hash:
+      serializedVersion: 2
+      Hash: fc8da0a6198c8cd463ad49e1bf1a05ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LobbyFinal
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1411,7 +1455,7 @@ ScriptsOnlyBuild:
     className: SendRateField
   - hash:
       serializedVersion: 2
-      Hash: 2a000c3c8d34b19db4e80b5586c164c8
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1769,8 +1813,33 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 38707a42cb383ed12ae323833b836a57
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WaitingRoomManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TileController
+  - hash:
+      serializedVersion: 2
+      Hash: ee895899ab2748e9c798d2db59d2262a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSceneController
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Launcher.unity
-  - Assets/Scenes/GameRoom.unity
+  - Assets/Scenes/FinalScenes/FinalLobby.unity
+  - Assets/Scenes/FinalScenes/WaitingRoom.unity
+  - Assets/Scenes/FinalScenes/GameScene.unity
   playerPath: C:/Users/Admin/Desktop/GPR_Networking.exe
