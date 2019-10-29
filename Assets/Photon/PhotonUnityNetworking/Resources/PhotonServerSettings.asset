@@ -35,5 +35,12 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - ChangeColor
+  - IncreaseHasLoaded
+  - MasterClientConnected
+  - StartCouroutineCountDown
+  - StartCouroutineGameFinished
+  - WinnerName
+  - LoadLevel
+  - PlayersAlive
   DisableAutoOpenWizard: 1
   ShowSettings: 0
