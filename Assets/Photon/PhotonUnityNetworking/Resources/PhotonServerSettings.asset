@@ -42,5 +42,8 @@ MonoBehaviour:
   - WinnerName
   - LoadLevel
   - PlayersAlive
+  - DecreaseMass
+  - IncreaseMass
+  - ToggleGravity
   DisableAutoOpenWizard: 1
   ShowSettings: 0

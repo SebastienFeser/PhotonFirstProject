@@ -3,8 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - GameSceneController
     - LobbyFinal
+    - PlateformController
     - PlayerMovement
-    - TileController
     - WaitingRoomManager
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
@@ -16,6 +16,10 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PhotonRigidbodyViewEditor
+    - Photon.Pun.PhotonTransformViewClassicEditor
+    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -226,6 +230,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14118}
     - Class: 114
       Script: {instanceID: 14132}
+    - Class: 114
+      Script: {instanceID: 73832}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1842,22 +1848,22 @@ ScriptsOnlyBuild:
     className: WaitingRoomManager
   - hash:
       serializedVersion: 2
-      Hash: 3ca50dafa5fbc095b1e37980f8847ee7
+      Hash: 82bc6bb18ef906d3bba4efb845c1ecb6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TileController
   - hash:
       serializedVersion: 2
       Hash: 5ae23e6110e7657282afa7e5298754ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameSceneController
+  - hash:
+      serializedVersion: 2
+      Hash: 3321bde5ba66741f2efd5f4415ddc2b5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlateformController
   platform: 19
   scenePathNames:
   - Assets/Scenes/FinalScenes/FinalLobby.unity
