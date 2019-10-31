@@ -159,7 +159,7 @@ MonoBehaviour:
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
   m_RotationModel:
-    SynchronizeEnabled: 1
+    SynchronizeEnabled: 0
     InterpolateOption: 1
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
@@ -209,3 +209,5 @@ MonoBehaviour:
     m_Bits: 512
   playerCollider: {fileID: 7830741038054275848}
   gameSceneController: {fileID: 0}
+  isAlive: 1
+  diedFunctionCalled: 0

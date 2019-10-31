@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] SphereCollider playerCollider;
 
     public GameSceneController gameSceneController;
+    public bool isAlive = true;
+    public bool diedFunctionCalled = false;
 
     private void Start()
     {
@@ -109,9 +111,10 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
                     #endregion
 
                     #region Events
-                    if (transform.position.y > upDeleteDistance || transform.position.y < downDeleteDistance)
+                    if ((transform.position.y > upDeleteDistance || transform.position.y < downDeleteDistance) && !diedFunctionCalled)
                     {
                         gameSceneController.HasDiedOrDisconnected();
+                        diedFunctionCalled = true;
                     }
                     #endregion
                 }

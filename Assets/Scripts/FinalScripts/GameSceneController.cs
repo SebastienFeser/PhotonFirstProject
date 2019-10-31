@@ -12,11 +12,14 @@ public class GameSceneController : MonoBehaviourPunCallbacks
     [SerializeField] Vector3 spawn2;    //Not Networked
     [SerializeField] Vector3 spawn3;    //Not Networked
     [SerializeField] Vector3 spawn4;    //Not Networked
+    [SerializeField] GameSceneController actualGameSceneController;
     GameObject currentPlayerBall;       //Not Networked
+    PlayerMovement playerMovement;
     [SerializeField] TextMeshProUGUI centralText;
     string winnerName = "Nobody";                  //Networked
     bool hasIncreased = false;
-    bool hasStartedCoroutine = false;
+    bool hasStartedCountDownCoroutine = false;
+    bool hasStartedEndCoroutine = false;
 
 
     public enum GameState
@@ -61,7 +64,8 @@ public class GameSceneController : MonoBehaviourPunCallbacks
         }
 
         currentPlayerBall = PhotonNetwork.Instantiate("Ball", spawnPosition, Quaternion.identity, 0);
-        currentPlayerBall.GetComponent<PlayerMovement>().gameSceneController = this;
+        playerMovement = currentPlayerBall.GetComponent<PlayerMovement>();
+        playerMovement.gameSceneController = this;
     }
 
     private void Update()
@@ -83,19 +87,17 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
     void WaitingToStart()
     {
-        Debug.Log("ListLength = " + PhotonNetwork.PlayerList.Length);
-        Debug.Log("hasLoaded = " + hasLoaded);
         if (masterClientConnected && !hasIncreased)
         {
             photonView.RPC("IncreaseHasLoaded", RpcTarget.All);
             photonView.RPC("PlayersAlive", RpcTarget.All);
             hasIncreased = true;
         }
-        if (PhotonNetwork.PlayerList.Length == hasLoaded && !hasStartedCoroutine)
+        if (PhotonNetwork.PlayerList.Length == hasLoaded && !hasStartedCountDownCoroutine)
         {
             //photonView.RPC("StartCouroutineCountDown", RpcTarget.All);
             StartCoroutine("StartCountDown");
-            hasStartedCoroutine = true;
+            hasStartedCountDownCoroutine = true;
         }
     }
 
@@ -111,22 +113,27 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
     void EndGame()
     {
-        if (currentPlayerBall != null)
+        Debug.Log("EndGame");
+        if (playerMovement.isAlive == true)
         {
             photonView.RPC("WinnerName", RpcTarget.All, PhotonNetwork.LocalPlayer.NickName);
+
         }
 
 
         //photonView.RPC("StartCouroutineGameFinished", RpcTarget.All);
-        if (winnerName != "Nobody")
+        if (winnerName != "Nobody" && !hasStartedEndCoroutine)
         {
             photonView.RPC("StartCouroutineGameFinished", RpcTarget.All);
+            hasStartedEndCoroutine = true;
         }
     }
 
     public void HasDiedOrDisconnected()
     {
-        playerAlive -= 1;                                       //Networked
+        Debug.Log("HasDied");
+        photonView.RPC("PlayerDead", RpcTarget.All);                                    //Networked
+        playerMovement.isAlive = false;
     }
 
     IEnumerator StartCountDown()
@@ -213,6 +220,12 @@ public class GameSceneController : MonoBehaviourPunCallbacks
     {
 
         winnerName = name;
+    }
+
+    [PunRPC]
+    void PlayerDead()
+    {
+        playerAlive -= 1;
     }
     #endregion
 
