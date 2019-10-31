@@ -546,6 +546,7 @@ MonoBehaviour:
   spawn2: {x: -13, y: 13, z: 0}
   spawn3: {x: 13, y: -13, z: 0}
   spawn4: {x: -13, y: -13, z: 0}
+  actualGameSceneController: {fileID: 0}
   centralText: {fileID: 1293884901}
   gameState: 0
 --- !u!4 &1174662395

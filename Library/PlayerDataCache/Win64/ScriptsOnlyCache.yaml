@@ -16,6 +16,10 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PhotonRigidbodyViewEditor
+    - Photon.Pun.PhotonTransformViewClassicEditor
+    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -227,7 +231,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10958}
     - Class: 114
-      Script: {instanceID: 15554}
+      Script: {instanceID: 13896}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -368,7 +372,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomMaxPlayersProperty
   - hash:
       serializedVersion: 2
-      Hash: 992a3ad3b76e248c5cc9c0093f9aea38
+      Hash: ca216a679d8178ccb00e43df51dd9f7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement

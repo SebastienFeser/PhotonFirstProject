@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] Rigidbody playerRigidbody;
     [SerializeField] LayerMask groundLayers;
     [SerializeField] SphereCollider playerCollider;
+    [SerializeField] Material localPlayerMaterial;
+    [SerializeField] Renderer playerRenderer;
 
     public GameSceneController gameSceneController;
     public bool isAlive = true;
@@ -24,7 +27,10 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        
+        if (photonView.IsMine)
+        {
+            playerRenderer.material = localPlayerMaterial;
+        }
     }
 
     private void Update()

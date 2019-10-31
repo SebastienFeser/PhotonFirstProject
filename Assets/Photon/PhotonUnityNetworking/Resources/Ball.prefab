@@ -208,6 +208,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerCollider: {fileID: 7830741038054275848}
+  localPlayerMaterial: {fileID: 2100000, guid: b835744e40ca3454c83aa3bccf60e17b, type: 2}
+  playerRenderer: {fileID: 7830741038054275851}
   gameSceneController: {fileID: 0}
   isAlive: 1
   diedFunctionCalled: 0

@@ -103,7 +103,6 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
     void Game()
     {
-        Debug.Log("PlayersAlive " + playerAlive);
         if (playerAlive <= 1)
         {
             Debug.Log("Player List Length in Game " + PhotonNetwork.PlayerList.Length);
