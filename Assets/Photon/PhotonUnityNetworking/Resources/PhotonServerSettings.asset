@@ -18,7 +18,7 @@ MonoBehaviour:
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: EU
+    FixedRegion: 
     Server: 
     Port: 0
     Protocol: 0
@@ -46,5 +46,6 @@ MonoBehaviour:
   - IncreaseMass
   - ToggleGravity
   - PlayerDead
+  - MasterClientLoaded
   DisableAutoOpenWizard: 1
   ShowSettings: 1

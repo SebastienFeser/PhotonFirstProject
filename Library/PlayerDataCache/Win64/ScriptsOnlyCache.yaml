@@ -1,8 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - GameSceneController
-    - LobbyFinal
+    - GameController
+    - Lobby
     - PlateformController
     - PlayerMovement
     - WaitingRoomManager
@@ -16,10 +16,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonRigidbodyViewEditor
-    - Photon.Pun.PhotonTransformViewClassicEditor
-    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -34,8 +30,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.TestRunner.dll:
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -48,7 +42,66 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/FinalScenes/FinalLobby.unity:
+    Assets/Scenes/GameScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9412}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9424}
+    - Class: 114
+      Script: {instanceID: 9468}
+    - Class: 114
+      Script: {instanceID: 10088}
+    - Class: 114
+      Script: {instanceID: 10092}
+    - Class: 114
+      Script: {instanceID: 10372}
+    - Class: 114
+      Script: {instanceID: 10564}
+    - Class: 114
+      Script: {instanceID: 10956}
+    - Class: 114
+      Script: {instanceID: 15180}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Lobby.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -124,39 +177,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10080}
+      Script: {instanceID: 10078}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10146}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10236}
     - Class: 114
-      Script: {instanceID: 10278}
+      Script: {instanceID: 10276}
+    - Class: 114
+      Script: {instanceID: 10328}
     - Class: 114
       Script: {instanceID: 10330}
     - Class: 114
-      Script: {instanceID: 10332}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10338}
+      Script: {instanceID: 10372}
     - Class: 114
-      Script: {instanceID: 10374}
+      Script: {instanceID: 10384}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10520}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 10528}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10564}
     - Class: 114
-      Script: {instanceID: 10566}
+      Script: {instanceID: 10740}
     - Class: 114
-      Script: {instanceID: 10742}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 10840}
+      Script: {instanceID: 10956}
     - Class: 114
-      Script: {instanceID: 10958}
-    - Class: 114
-      Script: {instanceID: 11032}
+      Script: {instanceID: 11030}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -185,66 +238,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 225
       Script: {instanceID: 0}
-    Assets/Scenes/FinalScenes/GameScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9412}
-    - Class: 114
-      Script: {instanceID: 9418}
-    - Class: 114
-      Script: {instanceID: 9424}
-    - Class: 114
-      Script: {instanceID: 9468}
-    - Class: 114
-      Script: {instanceID: 10090}
-    - Class: 114
-      Script: {instanceID: 10094}
-    - Class: 114
-      Script: {instanceID: 10374}
-    - Class: 114
-      Script: {instanceID: 10566}
-    - Class: 114
-      Script: {instanceID: 10958}
-    - Class: 114
-      Script: {instanceID: 13896}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/FinalScenes/WaitingRoom.unity:
+    Assets/Scenes/WaitingRoom.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -278,11 +272,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9834}
     - Class: 114
-      Script: {instanceID: 10374}
+      Script: {instanceID: 10372}
     - Class: 114
-      Script: {instanceID: 10566}
+      Script: {instanceID: 10564}
     - Class: 114
-      Script: {instanceID: 10958}
+      Script: {instanceID: 10956}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -372,7 +366,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomMaxPlayersProperty
   - hash:
       serializedVersion: 2
-      Hash: ca216a679d8178ccb00e43df51dd9f7a
+      Hash: 9db6c8b61ef8f6510a11d54fd15848cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1110,12 +1104,6 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsOpenToggle
   - hash:
       serializedVersion: 2
-      Hash: f315d17c5f52def3710616f7e8b7ee9b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameController
-  - hash:
-      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1182,16 +1170,16 @@ ScriptsOnlyBuild:
     className: ChatAppIdCheckerUI
   - hash:
       serializedVersion: 2
-      Hash: 3321bde5ba66741f2efd5f4415ddc2b5
+      Hash: 9adadb0e538b7e91ba0fa7f87b9594cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlateformController
   - hash:
       serializedVersion: 2
-      Hash: 8ce0c48129c99a5230790e0df5c90c84
+      Hash: c6989b7028c108213ac03723d0e42385
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameSceneController
+    className: GameController
   - hash:
       serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
@@ -1371,7 +1359,7 @@ ScriptsOnlyBuild:
       Hash: fc8da0a6198c8cd463ad49e1bf1a05ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LobbyFinal
+    className: Lobby
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1866,7 +1854,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 19
   scenePathNames:
-  - Assets/Scenes/FinalScenes/FinalLobby.unity
-  - Assets/Scenes/FinalScenes/WaitingRoom.unity
-  - Assets/Scenes/FinalScenes/GameScene.unity
-  playerPath: C:/Users/Admin/Desktop/NouveauRendu/GPR_Networking.exe
+  - Assets/Scenes/Lobby.unity
+  - Assets/Scenes/WaitingRoom.unity
+  - Assets/Scenes/GameScene.unity
+  playerPath: C:/Users/Admin/Desktop/Rendu Networking/GPR_Networking.exe

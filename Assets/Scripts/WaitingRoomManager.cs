@@ -68,7 +68,6 @@ public class WaitingRoomManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        //PhotonNetwork.LoadLevel("GameScene");
         photonView.RPC("LoadLevel", RpcTarget.All);
     }
 
@@ -79,7 +78,7 @@ public class WaitingRoomManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        PhotonNetwork.LoadLevel("FinalLobby");
+        PhotonNetwork.LoadLevel("Lobby");
     }
 
 

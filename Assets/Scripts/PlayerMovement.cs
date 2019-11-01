@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] Material localPlayerMaterial;
     [SerializeField] Renderer playerRenderer;
 
-    public GameSceneController gameSceneController;
+    public GameController gameSceneController;
     public bool isAlive = true;
     public bool diedFunctionCalled = false;
 
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (gameSceneController != null)
         {
-            if (gameSceneController.gameState == GameSceneController.GameState.WAITING_TO_START || gameSceneController.gameState == GameSceneController.GameState.END_GAME)
+            if (gameSceneController.gameState == GameController.GameState.WAITING_TO_START || gameSceneController.gameState == GameController.GameState.END_GAME)
             {
                 photonView.RPC("ToggleGravity", RpcTarget.All, false);
                 playerRigidbody.velocity = new Vector3(0, 0, 0);
@@ -106,11 +106,13 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 
                     if (Input.GetKeyDown(KeyCode.X))
                     {
-                        playerRigidbody.mass = xPressedMass;        //RPC
+                        //playerRigidbody.mass = xPressedMass;
+                        photonView.RPC("IncreaseMass", RpcTarget.All);
                     }
                     else if (Input.GetKeyUp(KeyCode.X))
                     {
-                        playerRigidbody.mass = baseMass;            //RPC
+                        //playerRigidbody.mass = baseMass;   
+                        photonView.RPC("DecreaseMass", RpcTarget.All);
                     }
 
 
@@ -142,7 +144,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if (gameSceneController.gameState == GameSceneController.GameState.GAME)
+        if (gameSceneController.gameState == GameController.GameState.GAME)
         {
             if (stream.IsWriting)
             {

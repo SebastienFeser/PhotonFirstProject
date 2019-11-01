@@ -6,17 +6,17 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameSceneController : MonoBehaviourPunCallbacks
+public class GameController : MonoBehaviourPunCallbacks
 {
-    [SerializeField] Vector3 spawn1;    //Not Networked
-    [SerializeField] Vector3 spawn2;    //Not Networked
-    [SerializeField] Vector3 spawn3;    //Not Networked
-    [SerializeField] Vector3 spawn4;    //Not Networked
-    [SerializeField] GameSceneController actualGameSceneController;
-    GameObject currentPlayerBall;       //Not Networked
+    [SerializeField] Vector3 spawn1;    
+    [SerializeField] Vector3 spawn2;    
+    [SerializeField] Vector3 spawn3;    
+    [SerializeField] Vector3 spawn4;    
+    [SerializeField] GameController actualGameSceneController;
+    GameObject currentPlayerBall;       
     PlayerMovement playerMovement;
     [SerializeField] TextMeshProUGUI centralText;
-    string winnerName = "Nobody";                  //Networked
+    string winnerName = "Nobody";                  
     bool hasIncreased = false;
     bool hasStartedCountDownCoroutine = false;
     bool hasStartedEndCoroutine = false;
@@ -29,20 +29,20 @@ public class GameSceneController : MonoBehaviourPunCallbacks
         END_GAME
     }
 
-    public GameState gameState;            //Networked
+    public GameState gameState;            
 
-    bool masterClientConnected;     //Networked
+    bool masterClientLoaded;     
 
-    int hasLoaded;                  //Networked
+    int hasLoaded;                  
 
-    int playerAlive;                //Networked
+    int playerAlive;                
 
     private void Start()
     {
-        gameState = GameState.WAITING_TO_START;         //Networked
+        gameState = GameState.WAITING_TO_START;         
         if (PhotonNetwork.IsMasterClient)
         {
-            photonView.RPC("MasterClientConnected", RpcTarget.All);
+            photonView.RPC("MasterClientLoaded", RpcTarget.All);
         }
 
         Vector3 spawnPosition = new Vector3(0, 0, 0);
@@ -87,7 +87,7 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
     void WaitingToStart()
     {
-        if (masterClientConnected && !hasIncreased)
+        if (masterClientLoaded && !hasIncreased)
         {
             photonView.RPC("IncreaseHasLoaded", RpcTarget.All);
             photonView.RPC("PlayersAlive", RpcTarget.All);
@@ -95,7 +95,6 @@ public class GameSceneController : MonoBehaviourPunCallbacks
         }
         if (PhotonNetwork.PlayerList.Length == hasLoaded && !hasStartedCountDownCoroutine)
         {
-            //photonView.RPC("StartCouroutineCountDown", RpcTarget.All);
             StartCoroutine("StartCountDown");
             hasStartedCountDownCoroutine = true;
         }
@@ -119,8 +118,7 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
         }
 
-
-        //photonView.RPC("StartCouroutineGameFinished", RpcTarget.All);
+        
         if (winnerName != "Nobody" && !hasStartedEndCoroutine)
         {
             photonView.RPC("StartCouroutineGameFinished", RpcTarget.All);
@@ -131,7 +129,7 @@ public class GameSceneController : MonoBehaviourPunCallbacks
     public void HasDiedOrDisconnected()
     {
         Debug.Log("HasDied");
-        photonView.RPC("PlayerDead", RpcTarget.All);                                    //Networked
+        photonView.RPC("PlayerDead", RpcTarget.All);                                    
         playerMovement.isAlive = false;
     }
 
@@ -159,23 +157,6 @@ public class GameSceneController : MonoBehaviourPunCallbacks
 
 
     }
-    #region PunCallbacks
-    /*private void OnConnectedToServer()
-    {
-
-        if (PhotonNetwork.IsMasterClient)
-        {
-            photonView.RPC("MasterClientConnected", RpcTarget.All);
-        }
-
-        Vector3 spawnPosition = new Vector3(0,0,0);
-
-
-        currentPlayerBall = PhotonNetwork.Instantiate("Ball", spawnPosition, Quaternion.identity, 0);
-        currentPlayerBall.GetComponent<PlayerMovement>().gameSceneController = this;
-    }*/
-
-    #endregion
 
     #region PunRPC
 
@@ -199,13 +180,10 @@ public class GameSceneController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void MasterClientConnected()
+    void MasterClientLoaded()
     {
-        Debug.Log("RPC");
-        //playerAlive = PhotonNetwork.PlayerList.Length;
-        Debug.Log("Player list length " + PhotonNetwork.PlayerList.Length);
         hasLoaded = 0;                                      
-        masterClientConnected = true;
+        masterClientLoaded = true;
     }
 
     [PunRPC]

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LobbyFinal : MonoBehaviourPunCallbacks
+public class Lobby : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject loginPannel;
     [SerializeField] GameObject selectionPannel;
